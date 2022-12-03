@@ -1,0 +1,16 @@
+yarn add gh-pages --dev
+1. установить библиотеку
+2. впапке package.json добавить в первый
+ уровень и вместо ххх добавить название проэкта -
+как написано на Git Hub
+"homepage": "https://pavelminsk1979.github.io/ххх",
+
+3.добавить в package.json в обьект "scripts" эти скрипты
+
+ "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
+4.сделать commit и push
+
+5.в терминале вебшторма прописать команду
+yarn deploy
