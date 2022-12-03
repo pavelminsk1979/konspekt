@@ -14,3 +14,96 @@ yarn add gh-pages --dev
 
 5.в терминале вебшторма прописать команду
 yarn deploy
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                                          2
+--------------------------------------------------------------------
+import {Navigate, Route, Routes } from 'react-router-dom'
+......................................
+библиотеку установить
+yarn add react-router-dom
+.......................................
+https://reactrouter.com/en/main/start/tutorial
+документаци€
+..................................................................
+
+1.обернуть головную компоненту
+    <BrowserRouter>
+            <App/>
+            </BrowserRouter>
+2. синтаксис  react-router-dom v6--новой
+ <Routes>
+                    <Route path="/" element={<TodolistsList/>}/>
+                    <Route path="login" element={ <Login/>}/>
+   </Routes>
+
+
+2. синтакис 5 версии - старой
+exact ---об€зательно прописать дл€ варианта который должен
+быть отрисован при старте приложени€--при пустом пути- "/"
+
+             <Route exact path="/" render={ ()=> <TodolistsList/>}/>
+              <Route path="login" render={ ()=> <Login/>}/>
+
+3. синтаксис  react-router-dom v6--новой
+если в URL адресе введено неправильный адрес, то надо 
+вывеси-отобразить на экран ќЅя«ј“≈Ћ№Ќќ ошибку.
+
+«¬≈«ƒќ„ ј это любой другой URL не те что у мен€
+прописаный-- будет перенаправление на отрисовку того
+что внутри element={ }
+
+<Route path="*" element={<h2>404: PAGE NOT FOUND</h2>}/>
+
+4.синтаксис  react-router-dom v6--новой
+если вписываю в URL адрес ерунду до с помощью компоненты
+<Navigate to ="/404" />  перенаправл€ет на страницу 
+в URL станет прописано 404... и этот адрес отобразит
+на экран ошибку
+
+ <Route path="/404" element={<h2>404: PAGE NOT FOUND</h2>}/>
+       <Route path="*" element={<Navigate to ="/404" />}/>
+
+5. синтаксис  react-router-dom v6--новой
+в этом пункте чисто конечный вариант в коде
+     <Routes>
+                    <Route path="/" element={<TodolistsList/>}/>
+                    <Route path="login" element={ <Login/>}/>
+                    <Route path="/404" element={<h2>404: PAGE NOT FOUND</h2>}/>
+                    <Route path="*" element={<Navigate to ="/404" />}/>
+                </Routes>
+если путь любой-то перенаправь на путь 404
+....................................................................
+5.синтакис 5 версии - старой
+Redirect -перенаправление с помощью этой компоненты
+<Switch>-- очередность определ€л в 5 версии
+
+<Switch>
+    <Route exact path = '/'  element = {<TodolistsList />}/>
+    <Route exact path = '/login'  element = {<Login/> }/>
+
+    <Route path = '/404' element = {<h1>404: PAGE NOT FOUND</h1>}/>
+    <Redirect from = '*' to = '/404'/>
+</Switch>
+.........................
+"react-router-dom": "5.3.0" в этой версии вот так
+<Route path={'/news'} component={News}/>
+                    <Route path={'/music'} component={Music}/>
+                    <Route path={'/settings'} component={Settings}/>
+                    <Route path={'/participants'} 
+                      render={() => <ParticipantsContainer/>}/>
+
+и навлинк вот такой
+
+<div>
+                <NavLink
+                    className={st.item}
+                    to='/settings' >Settings</NavLink>
+            </div>
+
+навлинки все обенуты ... <nav > </nav>
+.............................................................
+¬ react router dom v5 проблема
+ с link, и вместо link нужно использовать <a>??????
+.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
